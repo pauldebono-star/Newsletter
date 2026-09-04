@@ -42,9 +42,12 @@
     .nav {
         display: flex;
         justify-content: center;
+        align-items: center;
+        gap: 8px;
         margin-bottom: 14px;
+        flex-wrap: wrap;
     }
-    .nav a {
+    .nav a, .datepick {
         color: #fff;
         text-decoration: none;
         font-size: 12px;
@@ -55,7 +58,25 @@
         border-radius: 999px;
         border: 1px solid rgba(255,255,255,0.3);
     }
-    .nav a:hover { background: rgba(255,255,255,0.26); }
+    .nav a:hover, .datepick:hover { background: rgba(255,255,255,0.26); }
+    .datepick {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .datepick input[type="date"] {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        color-scheme: dark;
+    }
+    .datepick input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+    }
     .header h1 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
     .header p { margin: 8px 0 0 0; font-size: 14px; opacity: 0.95; font-weight: 500; }
     .content { padding: 30px 25px; }
@@ -87,7 +108,12 @@
 <body>
 <div class="container">
     <div class="header">
-        <div class="nav"><a href="factsheet.html">Monthly Factsheet &rarr;</a></div>
+        <div class="nav">
+            <a href="factsheet.html">Monthly Factsheet &rarr;</a>
+            <span class="datepick">
+                📅 <input type="date" id="editionDate" aria-label="Jump to an edition by date">
+            </span>
+        </div>
         <h1>Daily Newsletter</h1>
         <p>Montenegro &amp; International Protection</p>
     </div>
@@ -123,5 +149,34 @@
         <p style="margin-top: 10px; font-size: 11px;">This newsletter is compiled automatically from available news from official EU institutions, UN agencies, and regional media outlets, once per day. No genuinely new developments were found in the last 24&ndash;48 hours for any tracked topic.</p>
     </div>
 </div>
+
+<script>
+(function () {
+    var picker = document.getElementById('editionDate');
+    if (!picker) return;
+    var basePath = location.pathname.indexOf('/archive/') !== -1 ? '../' : '';
+    fetch(basePath + 'archive/index.json')
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+            var manifest = JSON.parse(t);
+            var dates = (manifest.dates || []).slice().sort();
+            if (dates.length) {
+                picker.min = dates[0];
+                picker.max = dates[dates.length - 1];
+            }
+            picker.addEventListener('change', function () {
+                var d = picker.value;
+                if (!d) return;
+                if (dates.indexOf(d) === -1) {
+                    alert('No edition available for ' + d + '.\nAvailable dates: ' + dates.join(', '));
+                    return;
+                }
+                var latest = dates[dates.length - 1];
+                location.href = (d === latest) ? (basePath + 'index.html') : (basePath + 'archive/' + d + '.html');
+            });
+        })
+        .catch(function () { /* manifest unavailable — picker stays inert */ });
+})();
+</script>
 </body>
 </html>
