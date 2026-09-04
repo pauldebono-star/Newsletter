@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Newsletter: Montenegro &amp; International Protection</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    :root {
+        --bg: #f5f5f5; --panel: #ffffff; --text: #333333; --muted: #666666;
+        --rule: #e5e5e5; --hdr-a: #003399; --hdr-b: #004db8; --hdr-border: #002266;
+        --accent: #003399; --update-bg: #f9f9f9; --noupdate-bg: #f0f0f0;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+            --bg: #14171a; --panel: #1c2024; --text: #d8d5cc; --muted: #948e7d;
+            --rule: #2c3033; --hdr-a: #0f2f66; --hdr-b: #123a80; --hdr-border: #0a2050;
+            --accent: #5f8fe0; --update-bg: #20242a; --noupdate-bg: #1a1d21;
+        }
+    }
+    body { background-color: var(--bg); color: var(--text); }
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--panel);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .header {
+        background: linear-gradient(135deg, var(--hdr-a) 0%, var(--hdr-b) 100%);
+        color: #fff;
+        padding: 30px 25px;
+        text-align: center;
+        border-bottom: 4px solid var(--hdr-border);
+    }
+    .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+    }
+    .nav a, .datepick {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        background: rgba(255,255,255,0.16);
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a:hover, .datepick:hover { background: rgba(255,255,255,0.26); }
+    .datepick {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .datepick input[type="date"] {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        color-scheme: dark;
+    }
+    .datepick input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+        cursor: pointer;
+    }
+    .header h1 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
+    .header p { margin: 8px 0 0 0; font-size: 14px; opacity: 0.95; font-weight: 500; }
+    .content { padding: 30px 25px; }
+    .section { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+    .section:last-child { border-bottom: none; margin-bottom: 0; }
+    .section h2 {
+        color: var(--accent); font-size: 16px; font-weight: 600; margin: 0 0 12px 0;
+        text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .update {
+        background-color: var(--update-bg); border-left: 4px solid var(--accent);
+        padding: 12px 15px; margin-bottom: 10px; border-radius: 4px; font-size: 14px; line-height: 1.6;
+    }
+    .update a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .update a:hover { text-decoration: underline; }
+    .date { font-size: 12px; color: var(--muted); margin-top: 6px; }
+    .no-update {
+        background-color: var(--noupdate-bg); border-left: 4px solid var(--muted);
+        padding: 12px 15px; border-radius: 4px; color: var(--muted); font-size: 14px; font-style: italic;
+    }
+    .footer {
+        background-color: var(--bg); padding: 20px 25px; border-top: 1px solid var(--rule);
+        font-size: 12px; color: var(--muted); text-align: center;
+    }
+    .footer p { margin: 5px 0; }
+    .timestamp { color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="nav">
+            <a href="../factsheet.html">Monthly Factsheet &rarr;</a>
+            <span class="datepick">
+                📅 <input type="date" id="editionDate" aria-label="Jump to an edition by date">
+            </span>
+        </div>
+        <h1>Daily Newsletter</h1>
+        <p>Montenegro &amp; International Protection</p>
+    </div>
+
+    <div class="content">
+
+        <div class="section">
+            <h2>1. EU Accession &amp; Negotiation Process</h2>
+        </div>
+
+        <div class="section">
+            <h2>2. National Legislation &ndash; Asylum &amp; International Protection</h2>
+        </div>
+
+        <div class="section">
+            <h2>3. Migration &amp; Asylum Trends &ndash; Border Management &amp; Statistics</h2>
+        </div>
+
+        <div class="section">
+            <h2>4. Government &amp; Political Updates</h2>
+        </div>
+
+        <div class="section">
+            <h2>5. Workshops &amp; Trainings (UNHCR, IOM, Frontex, JCP, ICMPD)</h2>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p><strong>Daily Newsletter: Montenegro &amp; International Protection</strong></p>
+        <p>5 September 2026 | 00:09 CEST &mdash; Latest update</p>
+        <p class="timestamp">Sources: EU Commission &bull; EEAS &bull; Consilium &bull; Frontex &bull; IOM &bull; UNHCR &bull; Balkan Insight &bull; European Western Balkans</p>
+        <p style="margin-top: 10px; font-size: 11px;">This newsletter is compiled automatically from available news from official EU institutions, UN agencies, and regional media outlets, once per day. No genuinely new developments were found in the last 24&ndash;48 hours for any tracked topic.</p>
+    </div>
+</div>
+
+<script>
+(function () {
+    var picker = document.getElementById('editionDate');
+    if (!picker) return;
+    var basePath = location.pathname.indexOf('/archive/') !== -1 ? '../' : '';
+    fetch(basePath + 'archive/index.json')
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+            var manifest = JSON.parse(t);
+            var dates = (manifest.dates || []).slice().sort();
+            if (dates.length) {
+                picker.min = dates[0];
+                picker.max = dates[dates.length - 1];
+            }
+            picker.addEventListener('change', function () {
+                var d = picker.value;
+                if (!d) return;
+                if (dates.indexOf(d) === -1) {
+                    alert('No edition available for ' + d + '.\nAvailable dates: ' + dates.join(', '));
+                    return;
+                }
+                var latest = dates[dates.length - 1];
+                location.href = (d === latest) ? (basePath + 'index.html') : (basePath + 'archive/' + d + '.html');
+            });
+        })
+        .catch(function () { /* manifest unavailable — picker stays inert */ });
+})();
+</script>
+</body>
+</html>
