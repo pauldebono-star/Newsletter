@@ -39,6 +39,23 @@
         text-align: center;
         border-bottom: 4px solid var(--hdr-border);
     }
+    .nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+    .nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        background: rgba(255,255,255,0.16);
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.3);
+    }
+    .nav a:hover { background: rgba(255,255,255,0.26); }
     .header h1 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: 0.5px; }
     .header p { margin: 8px 0 0 0; font-size: 14px; opacity: 0.95; font-weight: 500; }
     .content { padding: 30px 25px; }
@@ -70,6 +87,7 @@
 <body>
 <div class="container">
     <div class="header">
+        <div class="nav"><a href="factsheet.html">Monthly Factsheet &rarr;</a></div>
         <h1>Daily Newsletter</h1>
         <p>Montenegro &amp; International Protection</p>
     </div>
